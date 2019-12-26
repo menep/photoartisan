@@ -1,3 +1,10 @@
 <?php
+require 'app/core/utils.php';
 
-require 'app/views/pages/index.view.php';
+$view = parseUri() . ".view.php";
+
+if (file_exists("app/views/pages/$view")) {
+    require "app/views/pages/$view";
+} else {
+    require 'app/views/pages/not-found.php';
+}
