@@ -1,3 +1,3 @@
 <?php
 
-require 'views/pages/index.view.php';
+require 'app/views/pages/index.view.php';
