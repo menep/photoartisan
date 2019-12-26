@@ -1,3 +1,3 @@
 <?php
 
-echo '<h1>PHP Practice Site</h1>';
+require 'views/pages/index.view.php';
