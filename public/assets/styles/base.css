@@ -22,7 +22,7 @@ a {
 
 .header {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
 }
 
 .header__navlist {

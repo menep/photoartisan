@@ -12,6 +12,7 @@
 <body>
 
     <nav class="header">
+        <h2>Photo Artisan</h2>
         <nav>
             <ul class="header__navlist">
                 <li class="header__link"><a href="/">Home</a></li>

@@ -2,6 +2,6 @@
 
 require 'app/views/partials/header.php';
 
-echo '<h1>Home</h1>';
+require 'public/static/index.html';
 
 require 'app/views/partials/footer.php';
