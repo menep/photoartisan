@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Practice Site</title>
+    <link rel="stylesheet" href="/public/assets/styles/base.css">
 </head>
 
 <body>
 
-    <header>
+    <nav class="header">
         <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
+            <ul class="header__navlist">
+                <li class="header__link"><a href="/">Home</a></li>
+                <li class="header__link"><a href="/about">About</a></li>
+                <li class="header__link"><a href="/contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </nav>
