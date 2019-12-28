@@ -1,7 +1,5 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=photo_artisan';
-$user = 'testuser';
-$pass = 'testpass';
+$config = require 'config.php';
 
-return new PDO($dsn, $user, $pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+return new PDO($config['connection'] . ';dbname=' . $config['dbname'], $config['username'], $config['password'], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
