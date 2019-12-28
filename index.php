@@ -1,5 +1,6 @@
 <?php
 require 'app/core/utils.php';
+require 'app/core/Query.php';
 
 $method = ($_SERVER['REQUEST_METHOD']);
 
@@ -12,12 +13,8 @@ if ($method === 'GET') {
         require 'app/views/pages/not-found.php';
     }
 } else if ($method === 'POST') {
-    $pdo = require 'app/core/pdo.php';
-
-    $stmt = $pdo->prepare('SELECT * FROM test');
-    $stmt->execute();
-    $response = $stmt->fetchAll(PDO::FETCH_CLASS);
-
+    $query = new Query();
+    $response = $query->selectAll('test');
     foreach ($response as $row) {
         echo '<pre>' . var_export($row->b, true) . '</pre>';
     }
