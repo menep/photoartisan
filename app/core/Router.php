@@ -17,15 +17,7 @@ class Router
             }
         } else if ($method === 'POST') {
             $config = require 'config.php';
-
-            $dsn = $config['connection'] . ';dbname=' . $config['dbname'];
-
-            (new PDO(
-                $dsn,
-                $config['username'],
-                $config['password'],
-                $config['options']
-            ))->query('INSERT INTO Galleries (title, description, author) VALUES ("test", "asdasd", "me")');
+            (Connection::make($config))->query('INSERT INTO Galleries (title, description, author) VALUES ("test", "asdasd", "me")');
         }
     }
 }
