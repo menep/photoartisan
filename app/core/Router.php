@@ -17,7 +17,7 @@ class Router
             }
         } else if ($method === 'POST') {
             $config = require 'config.php';
-            (Connection::make($config))->query('INSERT INTO Galleries (title, description, author) VALUES ("test", "asdasd", "me")');
+            (new Query(Connection::make($config)))->createGallery($_POST);
         }
     }
 }
