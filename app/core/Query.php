@@ -2,11 +2,25 @@
 
 class Query
 {
-    public function selectAll($table)
+    protected $pdo;
+
+    public function __construct(PDO $pdo)
     {
-        $pdo = require 'app/core/pdo.php';
-        $stmt = $pdo->prepare("SELECT * FROM $table");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        $this->pdo = $pdo;
+    }
+
+    public function createGallery($params)
+    {
+        $sql = 'INSERT INTO Galleries (title, description, author) VALUES (:title, :description, :author)';
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute([
+                'title' => $params['title'],
+                'description' => $params['description'],
+                'author' => $params['author'],
+            ]);
+        } catch (PDOException $error) {
+            die($error->getMessage());
+        }
     }
 }
