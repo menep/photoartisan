@@ -1,5 +1,6 @@
 <?php
 require 'app/core/utils.php';
+require 'app/core/Connection.php';
 require 'app/core/Query.php';
 
 class Router
@@ -15,11 +16,16 @@ class Router
                 require 'app/views/pages/not-found.php';
             }
         } else if ($method === 'POST') {
-            $query = new Query();
-            $response = $query->selectAll('test');
-            foreach ($response as $row) {
-                echo '<pre>' . var_export($row->b, true) . '</pre>';
-            }
+            $config = require 'config.php';
+
+            $dsn = $config['connection'] . ';dbname=' . $config['dbname'];
+
+            (new PDO(
+                $dsn,
+                $config['username'],
+                $config['password'],
+                $config['options']
+            ))->query('INSERT INTO Galleries (title, description, author) VALUES ("test", "asdasd", "me")');
         }
     }
 }
