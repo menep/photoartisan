@@ -18,6 +18,13 @@ class Router
         } else if ($method === 'POST') {
             $config = require 'config.php';
             (new Query(Connection::make($config)))->createGallery($_POST);
+
+            self::redirect('/');
         }
+    }
+
+    public static function redirect($path)
+    {
+        header("Location: $path");
     }
 }
