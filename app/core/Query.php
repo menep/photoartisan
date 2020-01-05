@@ -23,4 +23,16 @@ class Query
             die($error->getMessage());
         }
     }
+
+    public function findGallery($params)
+    {
+        $sql = 'SELECT * FROM Galleries';
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute();
+            $statement->fetchAll();
+        } catch (PDOException $error) {
+            die($error->getMessage());
+        }
+    }
 }
