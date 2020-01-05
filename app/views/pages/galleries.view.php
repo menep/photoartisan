@@ -2,6 +2,7 @@
 
 require 'app/views/partials/header.php';
 
+$formAction = 'gallery/find';
 $submitButtonLabel = "Find gallery"
 
 ?>
