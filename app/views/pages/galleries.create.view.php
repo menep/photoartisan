@@ -2,4 +2,6 @@
 
 <?php
 
+$submitButtonLabel = "Create gallery";
+
 require 'app/views/partials/gallery.form.php';

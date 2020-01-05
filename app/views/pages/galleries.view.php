@@ -1,4 +1,10 @@
-<?php require 'app/views/partials/header.php'; ?>
+<?php 
+
+require 'app/views/partials/header.php';
+
+$submitButtonLabel = "Find gallery"
+
+?>
 
 <main>
     <h1>Galleries</h1>

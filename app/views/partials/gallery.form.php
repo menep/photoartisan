@@ -5,5 +5,5 @@
     <br>
     <label>Author: <input type="text" name="author"></label>
     <br>
-    <input type="submit" value="Create gallery">
+    <input type="submit" value="<?= $submitButtonLabel ?>">
 </form>
