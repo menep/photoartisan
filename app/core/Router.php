@@ -22,10 +22,15 @@ class Router
                 require 'app/views/pages/not-found.php';
             }
         } else if ($method === 'POST') {
+            $pathInfoComponents = explode('/', trim($_SERVER['PATH_INFO'], '/'));
             $config = require 'config.php';
-            (new Query(Connection::make($config)))->createGallery($_POST);
 
-            self::redirect('/');
+            if ($pathInfoComponents[0] === 'gallery') {
+                $action = $pathInfoComponents[1] . 'Gallery';
+                (new Query(Connection::make($config)))->$action($_POST);
+
+                self::redirect('/');
+            }
         }
     }
 
