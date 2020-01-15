@@ -16,7 +16,7 @@ class Router
             'gallery'
         ]
     ];
-    
+
     protected static function parseUri($uri)
     {
         $parsedUri = str_replace('/', '.', trim(parse_url($uri, PHP_URL_PATH), '/'));
@@ -27,10 +27,10 @@ class Router
     public static function direct($method)
     {
         if ($method === 'GET') {
-            $view = self::parseUri($_SERVER['REQUEST_URI']) . ".view.php";
+            $view = self::parseUri($_SERVER['REQUEST_URI']);
 
-            if (file_exists("app/views/pages/$view")) {
-                require "app/views/pages/$view";
+            if (array_search($view, self::ROUTES['GET']) !== false) {
+                require "app/views/pages/$view.view.php";
             } else {
                 require 'app/views/pages/not-found.php';
             }
@@ -41,8 +41,6 @@ class Router
             if ($pathInfoComponents[0] === 'gallery') {
                 $action = $pathInfoComponents[1] . 'Gallery';
                 (new Query(Connection::make($config)))->$action($_POST);
-
-                self::redirect('/');
             }
         }
     }
