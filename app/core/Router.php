@@ -4,6 +4,19 @@ require 'app/core/Query.php';
 
 class Router
 {
+    const ROUTES = [
+        'GET' => [
+            'about',
+            'contact',
+            'galleries',
+            'index',
+            'not-found'
+        ],
+        'POST' => [
+            'gallery'
+        ]
+    ];
+    
     protected static function parseUri($uri)
     {
         $parsedUri = str_replace('/', '.', trim(parse_url($uri, PHP_URL_PATH), '/'));
