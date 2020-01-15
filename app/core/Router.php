@@ -34,7 +34,11 @@ class Router
 
             if ($pathInfoComponents[0] === 'gallery') {
                 $action = $pathInfoComponents[1] . 'Gallery';
-                (new Query(Connection::make($config)))->$action($_POST);
+                $response = (new Query(Connection::make($config)))->$action($_POST);
+
+                if ($pathInfoComponents[1] === 'find') {
+                    var_dump($response);
+                }
             }
         }
     }
