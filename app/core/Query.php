@@ -11,7 +11,7 @@ class Query
 
     public function createGallery($params)
     {
-        $sql = 'INSERT INTO Galleries (title, description, author, created) VALUES (:title, :description, :author, :created)';
+        $sql = 'INSERT INTO Galleries (title, description, author, created) VALUES (:title, :description, :author, :created);';
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute([
@@ -27,11 +27,17 @@ class Query
 
     public function findGallery($params)
     {
-        $sql = 'SELECT * FROM Galleries';
+        $title = $params['title'];
+        $description = $params['description'];
+        $author = $params['author'];
+
+        $sql = "SELECT * FROM Galleries WHERE title='$title' AND description='$description' AND author='$author';";
+
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute();
-            $statement->fetchAll();
+
+            return $statement->fetchAll();
         } catch (PDOException $error) {
             die($error->getMessage());
         }
