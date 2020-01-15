@@ -1,6 +1,7 @@
 <?php
 require 'app/core/Connection.php';
 require 'app/core/Query.php';
+require 'app/core/Request.php';
 
 class Router
 {
@@ -17,17 +18,10 @@ class Router
         ]
     ];
 
-    protected static function parseUri($uri)
-    {
-        $parsedUri = str_replace('/', '.', trim(parse_url($uri, PHP_URL_PATH), '/'));
-
-        return (bool) $parsedUri ? $parsedUri : 'index';
-    }
-
     public static function direct($method)
     {
         if ($method === 'GET') {
-            $view = self::parseUri($_SERVER['REQUEST_URI']);
+            $view = Request::parseUri($_SERVER['REQUEST_URI']);
 
             if (array_search($view, self::ROUTES['GET']) !== false) {
                 require "app/views/pages/$view.view.php";
