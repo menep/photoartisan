@@ -15,6 +15,7 @@
 
     $formAction = 'gallery/create';
     $submitButtonLabel = "Create gallery";
+    $withDescription = true;
 
     require 'app/views/partials/gallery.form.php'; ?>
 
@@ -26,7 +27,8 @@
 
     $formAction = 'gallery/find';
     $submitButtonLabel = "Find gallery";
-
+    $withDescription = false;
+    
     require 'app/views/partials/gallery.form.php'; ?>
 
 </main>
