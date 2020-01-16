@@ -28,10 +28,9 @@ class Query
     public function findGallery($params)
     {
         $title = $params['title'];
-        $description = $params['description'];
         $author = $params['author'];
 
-        $sql = "SELECT * FROM Galleries WHERE title='$title' AND description='$description' AND author='$author';";
+        $sql = "SELECT * FROM Galleries WHERE title='$title' AND author='$author';";
 
         try {
             $statement = $this->pdo->prepare($sql);
