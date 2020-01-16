@@ -4,7 +4,7 @@ require 'app/views/partials/header.php';
 
 ?>
 
-<h1>WTF</h1>
+<h1>Found galleries</h1>
 
 <?php
 foreach ($response as $row) {
