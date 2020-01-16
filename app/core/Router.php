@@ -37,7 +37,7 @@ class Router
                 $response = (new Query(Connection::make($config)))->$action($_POST);
 
                 if ($pathInfoComponents[1] === 'find') {
-                    var_dump($response);
+                    require 'app/views/pages/galleries.results.php';
                 }
             }
         }
