@@ -30,11 +30,14 @@ class Query
         $title = $params['title'];
         $author = $params['author'];
 
-        $sql = "SELECT * FROM Galleries WHERE title='$title' AND author='$author';";
+        $sql = 'SELECT * FROM Galleries WHERE title=:title OR author=:author;';
 
         try {
             $statement = $this->pdo->prepare($sql);
-            $statement->execute();
+            $statement->execute([
+                'title' => $title,
+                'author' => $author
+            ]);
 
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $error) {
