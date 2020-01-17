@@ -1,0 +1,9 @@
+{
+  "name": "menep/photoartisan",
+  "type": "project",
+  "autoload": {
+    "classmap": [
+      "./app/"
+    ]
+  }
+}
