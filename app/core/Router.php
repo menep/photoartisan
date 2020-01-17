@@ -3,6 +3,8 @@ require 'app/core/Connection.php';
 require 'app/core/Query.php';
 require 'app/core/Request.php';
 
+require 'app/controllers/PagesController.php';
+
 class Router
 {
     const ROUTES = [
@@ -20,11 +22,13 @@ class Router
 
     public static function direct($method)
     {
+        $controller = new PagesController;
+
         if ($method === 'GET') {
             $view = Request::parseUri($_SERVER['REQUEST_URI']);
 
             if (array_search($view, self::ROUTES['GET']) !== false) {
-                require "app/views/pages/$view.view.php";
+                $controller->getPage($view);
             } else {
                 require 'app/views/pages/not-found.php';
             }
