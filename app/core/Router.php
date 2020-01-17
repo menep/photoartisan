@@ -30,7 +30,7 @@ class Router
             if (array_search($view, self::ROUTES['GET']) !== false) {
                 $controller->getPage($view);
             } else {
-                require 'app/views/pages/not-found.php';
+                $controller->getPage('not-found');
             }
         } else if ($method === 'POST') {
             $pathInfoComponents = explode('/', trim($_SERVER['PATH_INFO'], '/'));
