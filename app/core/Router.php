@@ -1,9 +1,4 @@
 <?php
-require 'app/core/Connection.php';
-require 'app/core/Query.php';
-require 'app/core/Request.php';
-
-require 'app/controllers/PagesController.php';
 
 class Router
 {
