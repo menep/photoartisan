@@ -1,7 +1,7 @@
-<?php
+<?php require 'app/views/partials/header.php'; ?>
 
-require 'app/views/partials/header.php';
+<h1 class="title--1 text--center">Welcome to Photo Artisan</h1>
 
-require 'public/static/index.html';
+<h2 class="title--2 text--center"> A simple app to create and view photo galleries </h2>
 
-require 'app/views/partials/footer.php';
+<?php require 'app/views/partials/footer.php';

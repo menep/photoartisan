@@ -15,4 +15,4 @@
         <a href="/">Photoartisan</a>
     </header>
 
-    <main class="main__wrapper flex--column">
+    <main class="main__wrapper flex--column margin__top--40">

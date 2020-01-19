@@ -47,3 +47,23 @@ a {
 .flex--column {
   flex-direction: column;
 }
+
+.text--center {
+  text-align: center;
+}
+
+.margin__top--40 {
+  margin-top: 40px;
+}
+
+.title--1 {
+  font-weight: 300;
+  font-size: 3.5rem;
+  letter-spacing: .2rem;
+}
+
+.title--2 {
+  font-weight: 300;
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+}
