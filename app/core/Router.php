@@ -17,9 +17,9 @@ class Router
 
     public static function direct($method)
     {
-        $controller = new PagesController;
-
         if ($method === 'GET') {
+            $controller = new PagesController;
+
             $view = Request::parseUri($_SERVER['REQUEST_URI']);
 
             if (array_search($view, self::ROUTES['GET']) !== false) {
@@ -32,11 +32,10 @@ class Router
             $config = require 'config.php';
 
             if ($pathInfoComponents[0] === 'gallery') {
-                $action = $pathInfoComponents[1] . 'Gallery';
-                $response = (new Query(Connection::make($config)))->$action($_POST);
+                $controller = new GalleryController($config);
 
                 if ($pathInfoComponents[1] === 'find') {
-                    require 'app/views/pages/galleries.results.php';
+                    $controller->find($_POST);
                 }
             }
         }
