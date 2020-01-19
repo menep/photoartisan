@@ -1,6 +1,6 @@
 <?php require 'app/views/partials/header.php'; ?>
 
-<main>
+<main class="main__wrapper flex--column">
     <h1>Galleries</h1>
 
     <ul>
