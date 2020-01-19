@@ -19,7 +19,7 @@ require 'app/views/partials/header.php';
             <?php foreach ($response as $key) : ?>
 
                 <tr>
-                    <td><?= $key['title'] ?></td>
+                    <td><a href="view?id=<?= $key['id'] ?>"><?= $key['title'] ?></a> </td>
                     <td><?= $key['author']; ?></td>
                     <td><?= (new DateTime('@' . $key['created']))->format('d M Y, H:i'); ?></td>
                 </tr>
