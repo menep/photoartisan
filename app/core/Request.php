@@ -2,9 +2,9 @@
 
 class Request
 {
-    public static function parseUri($uri)
+    public static function parseUri()
     {
-        $parsedUri = str_replace('/', '.', trim(parse_url($uri, PHP_URL_PATH), '/'));
+        $parsedUri = str_replace('/', '.', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
 
         return (bool) $parsedUri ? $parsedUri : 'index';
     }
