@@ -12,7 +12,7 @@
 
     <?php
 
-    $formAction = 'gallery/create';
+    $formAction = 'galleries/create';
     $submitButtonLabel = "Create gallery";
     $withDescription = true;
 
@@ -24,7 +24,7 @@
 
     <?php
 
-    $formAction = 'gallery/find';
+    $formAction = 'galleries/find';
     $submitButtonLabel = "Find gallery";
     $withDescription = false;
     
