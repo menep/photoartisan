@@ -4,6 +4,6 @@ class PagesController
 {
     public function getPage($page)
     {
-        require "app/views/pages/$page.view.php";
+        require "app/views/pages/$page.php";
     }
 }

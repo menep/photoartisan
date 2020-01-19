@@ -20,6 +20,6 @@ class GalleryController
     {
         $response = (new Query(Connection::make($this->config)))->findGallery($params);
 
-        require 'app/views/pages/gallery.results.view.php';
+        require 'app/views/pages/gallery.results.php';
     }
 }
