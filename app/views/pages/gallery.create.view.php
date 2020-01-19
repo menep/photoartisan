@@ -4,7 +4,7 @@
 
 <?php
 
-$formAction = 'galleries/create';
+$formAction = 'create';
 $submitButtonLabel = "Create gallery";
 $withDescription = true;
 

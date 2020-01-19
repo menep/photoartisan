@@ -4,7 +4,7 @@
 
 <?php
 
-$formAction = 'galleries/find';
+$formAction = 'find';
 $submitButtonLabel = "Find gallery";
 $withDescription = false;
 
