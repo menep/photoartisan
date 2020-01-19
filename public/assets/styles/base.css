@@ -22,18 +22,16 @@ a {
   color: inherit;
 }
 
-.header {
+.header__wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: .4rem;
   align-items: center;
   background-color: #333;
   color: #ddd;
   height: 40px;
-}
-
-.header__navlist {
-  display: flex;
-  font-size: 1.6rem;
 }
 
 .header__link {
