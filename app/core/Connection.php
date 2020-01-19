@@ -2,8 +2,10 @@
 
 class Connection
 {
-    public static function make($config)
+    public static function make()
     {
+        $config = require 'config.php';
+
         try {
             $dsn = $config['connection'] . ';dbname=' . $config['dbname'];
             

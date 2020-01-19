@@ -2,23 +2,16 @@
 
 class GalleryController
 {
-    private $config;
-
-    public function __construct($config)
-    {
-        $this->config = $config;
-    }
-
     public function create($params)
     {
-        $response = (new Query(Connection::make($this->config)))->createGallery($params);
+        $response = (new Query(Connection::make()))->createGallery($params);
 
         Router::redirect('/');
     }
 
     public function find($params)
     {
-        $response = (new Query(Connection::make($this->config)))->findGallery($params);
+        $response = (new Query(Connection::make()))->findGallery($params);
 
         require 'app/views/pages/gallery.results.php';
     }
