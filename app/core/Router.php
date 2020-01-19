@@ -38,6 +38,9 @@ class Router
                     case 'find':
                         $controller->find($_POST);
                         break;
+                    case 'create':
+                        $controller->create($_POST);
+                        break;
                 }
             }
         }
