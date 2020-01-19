@@ -12,3 +12,5 @@
 <body>
 
     <?php require 'app/views/partials/nav.php'; ?>
+
+    <main class="main__wrapper flex--column">

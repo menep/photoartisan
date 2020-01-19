@@ -1,6 +1,5 @@
 <?php require 'app/views/partials/header.php'; ?>
 
-<main class="main__wrapper flex--column">
     <h1>Galleries</h1>
 
     <ul>
@@ -30,8 +29,6 @@
     $withDescription = false;
     
     require 'app/views/partials/gallery.form.php'; ?>
-
-</main>
 
 <?php
 
