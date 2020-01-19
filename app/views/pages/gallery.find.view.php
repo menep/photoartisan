@@ -1,6 +1,6 @@
 <?php require 'app/views/partials/header.php'; ?>
 
-<h2>Find a gallery</h2>
+<h1 class="title--1 text--center margin__bt--40">Find a gallery</h1>
 
 <?php
 
