@@ -7,7 +7,8 @@ class Router
             'index',
             'not-found',
             'gallery.create',
-            'gallery.find'
+            'gallery.find',
+            'gallery.results'
         ],
         'POST' => [
             'gallery'
