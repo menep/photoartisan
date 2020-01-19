@@ -105,3 +105,8 @@ a {
   width: 20%;
   display: inline-block;
 }
+
+.table__query--results {
+  min-width: 60%;
+  margin: 0 auto;
+}

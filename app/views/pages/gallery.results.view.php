@@ -4,9 +4,10 @@ require 'app/views/partials/header.php';
 
 ?>
 
-<h1>Found galleries</h1>
+<h1 class="title--1 text--center margin__bt--40"><?= (count($response) ?: 'No') . ' results found' ?></h1>
 
-<table>
+<?php if(count($response)) : ?>
+<table class="table__query--results text--medium text--center">
     <thead>
         <tr>
             <th>Title</th>
@@ -27,6 +28,7 @@ require 'app/views/partials/header.php';
     </tbody>
 </table>
 
+<?php endif ?>
 
 <?php
 require 'app/views/partials/footer.php';
