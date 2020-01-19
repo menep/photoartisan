@@ -4,11 +4,10 @@ class Router
 {
     const ROUTES = [
         'GET' => [
-            'about',
-            'contact',
-            'galleries',
             'index',
-            'not-found'
+            'not-found',
+            'gallery.create',
+            'gallery.find'
         ],
         'POST' => [
             'gallery'
