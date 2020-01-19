@@ -8,4 +8,9 @@ class Request
 
         return (bool) $parsedUri ? $parsedUri : 'index';
     }
+
+    public static function getMethod()
+    {
+        return $_SERVER['REQUEST_METHOD'];
+    }
 }
