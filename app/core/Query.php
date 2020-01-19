@@ -30,13 +30,13 @@ class Query
         $title = $params['title'];
         $author = $params['author'];
 
-        $sql = 'SELECT * FROM Galleries WHERE title=:title OR author=:author;';
+        $sql = 'SELECT * FROM Galleries WHERE title LIKE :title AND author LIKE :author';
 
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute([
-                'title' => $title,
-                'author' => $author
+                'title' => '%' . $title . '%',
+                'author' => '%' . $author . '%'
             ]);
 
             return $statement->fetchAll(PDO::FETCH_ASSOC);
