@@ -34,8 +34,10 @@ class Router
             if ($pathInfoComponents[0] === 'gallery') {
                 $controller = new GalleryController($config);
 
-                if ($pathInfoComponents[1] === 'find') {
-                    $controller->find($_POST);
+                switch ($pathInfoComponents[1]) {
+                    case 'find':
+                        $controller->find($_POST);
+                        break;
                 }
             }
         }
