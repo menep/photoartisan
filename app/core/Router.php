@@ -30,7 +30,7 @@ class Router
             $pathInfoComponents = explode('/', trim($_SERVER['PATH_INFO'], '/'));
             $config = require 'config.php';
 
-            if ($pathInfoComponents[0] === 'galleries') {
+            if ($pathInfoComponents[0] === 'gallery') {
                 $controller = new GalleryController($config);
 
                 switch ($pathInfoComponents[1]) {
