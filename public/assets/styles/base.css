@@ -70,6 +70,10 @@ a {
   margin-bottom: 40px;
 }
 
+.margin__bt--20 {
+  margin-bottom: 20px;
+}
+
 .title--1 {
   font-weight: 300;
   font-size: 3.5rem;

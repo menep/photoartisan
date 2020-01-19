@@ -1,7 +1,7 @@
-<?php
+<?php require 'app/views/partials/header.php'; ?>
 
-require 'app/views/partials/header.php';
+<h1 class="title--1 text--center margin__bt--20">Oops!</h1>
 
-echo '<h1>Whoops! We couldn\'t find the page you were looking for!</h1>';
+<h2 class="title--2 text--center">The page you were looking for could not be retrieved...</h2>
 
-require 'app/views/partials/footer.php';
+<?php require 'app/views/partials/footer.php';
