@@ -2,12 +2,6 @@
 
     <h1>Galleries</h1>
 
-    <ul>
-        <li><a href="/galleries/list">View your galleries</a></li>
-    </ul>
-
-    <br>
-
     <h2>Create a new gallery</h2>
 
     <?php
