@@ -11,6 +11,8 @@
 
 <body>
 
-    <?php require 'app/views/partials/nav.php'; ?>
+    <header class="header__wrapper">
+        <a href="/">Photoartisan</a>
+    </header>
 
     <main class="main__wrapper flex--column">
