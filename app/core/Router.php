@@ -4,45 +4,27 @@ class Router
 {
     const ROUTES = [
         'GET' => [
-            'index',
-            'not-found',
-            'gallery.create',
-            'gallery.find',
-            'gallery.results'
+            '' => ['home'],
+            'gallery' => ['find', 'create']
         ],
         'POST' => [
-            'gallery'
+            'gallery' => ['find', 'create']
         ]
     ];
 
     public static function direct($method)
     {
-        if ($method === 'GET') {
-            $controller = new PagesController;
+        $urlComponents = Request::parseUrl();
+        if (array_key_exists($urlComponents['path'][0], self::ROUTES[$method])) {
+            $asd = self::ROUTES[$method][$urlComponents['path'][0]];
 
-            $parsedUrl = Request::parseUrl() ? Request::parseUrl() : 'index';
-
-            if (array_search($parsedUrl, self::ROUTES['GET']) !== false) {
-                $controller->getPage($parsedUrl);
+            if (array_search($urlComponents['path'][1], $asd) !== false) {
+                // TODO: get controller method
             } else {
-                $controller->getPage('not-found');
+                (new PagesController())->notFound();
             }
-        } else if ($method === 'POST') {
-            $pathInfoComponents = explode('/', trim($_SERVER['PATH_INFO'], '/'));
-            $config = require 'config.php';
-
-            if ($pathInfoComponents[0] === 'gallery') {
-                $controller = new GalleryController($config);
-
-                switch ($pathInfoComponents[1]) {
-                    case 'find':
-                        $controller->find($_POST);
-                        break;
-                    case 'create':
-                        $controller->create($_POST);
-                        break;
-                }
-            }
+        } else {
+            (new PagesController())->notFound();
         }
     }
 
