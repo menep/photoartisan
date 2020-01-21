@@ -4,11 +4,11 @@ class Router
 {
     const ROUTES = [
         'GET' => [
-            '' => ['home'],
-            'gallery' => ['find', 'create']
+            '' => 'home',
+            'gallery' => 'gallery'
         ],
         'POST' => [
-            'gallery' => ['find', 'create']
+            'gallery' => 'gallery'
         ]
     ];
 
@@ -16,13 +16,8 @@ class Router
     {
         $urlComponents = Request::parseUrl();
         if (array_key_exists($urlComponents['path'][0], self::ROUTES[$method])) {
-            $asd = self::ROUTES[$method][$urlComponents['path'][0]];
-
-            if (array_search($urlComponents['path'][1], $asd) !== false) {
-                // TODO: get controller method
-            } else {
-                (new PagesController())->notFound();
-            }
+            $action = self::ROUTES[$method][$urlComponents['path'][0]];
+            (new PagesController())->$action($urlComponents['path'][1], $method);
         } else {
             (new PagesController())->notFound();
         }
