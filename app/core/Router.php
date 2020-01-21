@@ -20,10 +20,10 @@ class Router
         if ($method === 'GET') {
             $controller = new PagesController;
 
-            $view = Request::parseUrl();
+            $parsedUrl = Request::parseUrl() ? Request::parseUrl() : 'index';
 
-            if (array_search($view, self::ROUTES['GET']) !== false) {
-                $controller->getPage($view);
+            if (array_search($parsedUrl, self::ROUTES['GET']) !== false) {
+                $controller->getPage($parsedUrl);
             } else {
                 $controller->getPage('not-found');
             }

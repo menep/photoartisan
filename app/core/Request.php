@@ -4,9 +4,7 @@ class Request
 {
     public static function parseUrl()
     {
-        $parsedUri = str_replace('/', '.', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
-
-        return (bool) $parsedUri ? $parsedUri : 'index';
+        return str_replace('/', '.', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
     }
 
     public static function getMethod()
