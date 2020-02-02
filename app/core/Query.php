@@ -19,7 +19,8 @@ class Query
                 'description' => $params['description'],
                 'author' => $params['author'],
                 'created' => (new DateTime())->getTimestamp()
-            ]);
+			]);
+			return $this->pdo->lastInsertId();
         } catch (PDOException $error) {
             die($error->getMessage());
         }
