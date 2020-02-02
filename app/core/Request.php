@@ -4,13 +4,7 @@ class Request
 {
     public static function parseUrl()
     {
-        $path =  explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
-        parse_str(parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY), $query);
-
-        return [
-            'path' => $path,
-            'query' => $query
-        ];
+        return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     }
 
     public static function getMethod()
