@@ -6,7 +6,8 @@ class Router
         'GET' => [
             '' => 'PagesController@home',
             'gallery/create' => 'PagesController@createGallery',
-            'gallery/find' => 'PagesController@findGallery'
+			'gallery/find' => 'PagesController@findGallery',
+			'gallery/view' => 'PagesController@viewGallery'
 
         ],
         'POST' => [
