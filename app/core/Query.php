@@ -44,4 +44,18 @@ class Query
             die($error->getMessage());
         }
     }
+    
+    public function findGalleryById($id)
+    {
+        $sql = 'SELECT * FROM Galleries WHERE id=:id';
+
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute(['id' => $id]);
+            
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $error) {
+            die($error->getMessage());
+        }
+    }
 }
