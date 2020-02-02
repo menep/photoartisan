@@ -6,9 +6,9 @@ class GalleryController
     {
 		$params = Request::getParams();
 
-        $response = (new Query(DatabaseConnection::make()))->createGallery($params);
+        $id = (new Query(DatabaseConnection::make()))->createGallery($params);
 
-        Router::redirect('/');
+        (new PagesController)->viewGallery($id);
     }
 
     public function findGallery()
