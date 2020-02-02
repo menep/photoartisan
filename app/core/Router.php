@@ -4,22 +4,24 @@ class Router
 {
     const ROUTES = [
         'GET' => [
-            '' => 'home',
-            'gallery' => 'gallery'
+            '' => 'PagesController@home',
+            'gallery/create' => 'PagesController@createGallery',
+            'gallery/find' => 'PagesController@findGallery'
+
         ],
         'POST' => [
-            'gallery' => 'gallery'
+            'gallery/create' => 'GalleryController@createGallery',
+            'gallery/find' => 'GalleryController@findGallery'
         ]
     ];
 
     public static function direct($method)
     {
-        $urlComponents = Request::parseUrl();
-        if (array_key_exists($urlComponents['path'][0], self::ROUTES[$method])) {
-            $action = self::ROUTES[$method][$urlComponents['path'][0]];
-            (new PagesController())->$action($urlComponents['path'][1], $method);
-        } else {
-            (new PagesController())->notFound();
+        $parsedUrl = Request::parseUrl();
+        
+        if (array_key_exists($parsedUrl, self::ROUTES[$method])) {
+			[$controller, $action] =  explode('@', self::ROUTES[$method][$parsedUrl]);
+			(new $controller)->$action();
         }
     }
 
