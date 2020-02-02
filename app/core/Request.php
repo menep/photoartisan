@@ -10,5 +10,10 @@ class Request
     public static function getMethod()
     {
         return $_SERVER['REQUEST_METHOD'];
-    }
+	}
+	
+	public static function getParams()
+	{
+		return $_REQUEST;
+	}
 }
