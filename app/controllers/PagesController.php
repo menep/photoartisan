@@ -12,27 +12,14 @@ class PagesController
         require "app/views/pages/not-found.php";
     }
 
-    public function gallery($action, $method)
+    public function findGallery()
     {
-        $routes = [
-            'GET' => [
-                'find',
-                'create'
-            ],
-            'POST' => [
-                'find',
-                'create'
-            ]
-        ];
+        require "app/views/pages/gallery.find.php";
+	}
+	
 
-        if (array_search($action, $routes[$method]) !== false) {
-            if ($method === 'GET') {
-                require "app/views/pages/gallery.$action.php";
-            } else if ($method === 'POST') {
-                (new GalleryController())->$action($_POST);
-            }
-        } else {
-            (new PagesController())->notFound();
-        }
+    public function createGallery()
+    {
+        require "app/views/pages/gallery.create.php";
     }
 }
