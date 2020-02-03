@@ -11,7 +11,6 @@ class GalleryController
             return;
         }
         
-        return;
         $id = (new Query(DatabaseConnection::make()))->createGallery($params);
 
         (new PagesController)->viewGallery($id);
