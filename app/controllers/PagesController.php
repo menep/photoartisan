@@ -18,7 +18,7 @@ class PagesController
 	}
 	
 
-    public function createGallery()
+    public function createGallery($error = null)
     {
         require "app/views/pages/gallery.create.php";
 	}
