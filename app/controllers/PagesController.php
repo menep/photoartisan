@@ -23,11 +23,11 @@ class PagesController
         require "app/views/pages/gallery.create.php";
 	}
 	
-	public function viewGallery($id)
+	public function viewGallery($params)
 	{
-		$params = Request::getParams();
+		['id' => $id] = $params;
 
-        $response = (new Query(DatabaseConnection::make()))->findGalleryById($id ?: $params['id']);
+        $response = (new Query(DatabaseConnection::make()))->findGalleryById($id);
 
         require "app/views/pages/gallery.view.php";
 	}

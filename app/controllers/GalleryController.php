@@ -13,7 +13,7 @@ class GalleryController
         
         $id = (new Query(DatabaseConnection::make()))->createGallery($params);
 
-        (new PagesController)->viewGallery($id);
+        (new PagesController)->viewGallery(['id' => $id]);
     }
 
     public function findGallery()
