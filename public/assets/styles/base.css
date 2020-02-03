@@ -114,3 +114,7 @@ a {
   min-width: 60%;
   margin: 0 auto;
 }
+
+.text--error {
+	color: red;
+}
