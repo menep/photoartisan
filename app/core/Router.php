@@ -22,7 +22,7 @@ class Router
         
         if (array_key_exists($parsedUrl, self::ROUTES[$method])) {
 			[$controller, $action] =  explode('@', self::ROUTES[$method][$parsedUrl]);
-			(new $controller)->$action();
+			(new $controller)->$action(Request::getParams());
         } else {
 			(new PagesController)->notFound();
 		}
