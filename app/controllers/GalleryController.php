@@ -4,8 +4,14 @@ class GalleryController
 {
     public function createGallery()
     {
-		$params = Request::getParams();
+        $params = Request::getParams();
 
+        if (empty($params['title']) || empty($params['author'])) {
+            (new PagesController)->createGallery('Gallery creation failed: one or multiple required inputs were missing');
+            return;
+        }
+        
+        return;
         $id = (new Query(DatabaseConnection::make()))->createGallery($params);
 
         (new PagesController)->viewGallery($id);
@@ -13,7 +19,7 @@ class GalleryController
 
     public function findGallery()
     {
-		$params = Request::getParams();
+        $params = Request::getParams();
 
         $response = (new Query(DatabaseConnection::make()))->findGallery($params);
 
