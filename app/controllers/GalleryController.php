@@ -23,5 +23,10 @@ class GalleryController
         $response = (new Query(DatabaseConnection::make()))->findGallery($params);
 
         require 'app/views/pages/gallery.results.php';
-    }
+	}
+	
+	public function uploadImage($params)
+	{
+		var_dump($params);
+	}
 }
