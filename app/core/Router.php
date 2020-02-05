@@ -12,7 +12,8 @@ class Router
         ],
         'POST' => [
             'gallery/create' => 'GalleryController@createGallery',
-            'gallery/find' => 'GalleryController@findGallery'
+			'gallery/find' => 'GalleryController@findGallery',
+			'gallery/upload' => 'GalleryController@uploadImage'
         ]
     ];
 
