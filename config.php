@@ -2,9 +2,9 @@
 
 return [
     'connection' => 'mysql:host=localhost',
-    'username' => 'testuser',
-    'password' => 'testpass',
-    'dbname' => 'photo_artisan',
+    'username' => getenv('DBUSER'),
+    'password' => getenv('DBPASSWORD'),
+    'dbname' => getenv('DBNAME'),
     'options' => [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]
